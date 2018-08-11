@@ -3,10 +3,6 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/carty-rabbitmq/pom.xml" />
-        <option value="$PROJECT_DIR$/rocketmq/pom.xml" />
-        <option value="$PROJECT_DIR$/rocketmq01/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBoot_RabbitMQ_2.0/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot_RabbitMQ/pom.xml" />
       </list>
     </option>

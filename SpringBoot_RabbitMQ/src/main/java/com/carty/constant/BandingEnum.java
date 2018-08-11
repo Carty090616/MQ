@@ -27,4 +27,7 @@ public enum BandingEnum {
         this.val = val;
     }
 
+    public String val() {
+        return this.val;
+    }
 }

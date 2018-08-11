@@ -4,10 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/MQ.iml" filepath="$PROJECT_DIR$/.idea/MQ.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringBoot_RabbitMQ/SpringBoot_RabbitMQ.iml" filepath="$PROJECT_DIR$/SpringBoot_RabbitMQ/SpringBoot_RabbitMQ.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringBoot_RabbitMQ_2.0/SpringBoot_RabbitMQ_2.0.iml" filepath="$PROJECT_DIR$/SpringBoot_RabbitMQ_2.0/SpringBoot_RabbitMQ_2.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/rocketmq01/demo.iml" filepath="$PROJECT_DIR$/rocketmq01/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/carty-rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/carty-rabbitmq/rabbitmq.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rocketmq/rocketmq.iml" filepath="$PROJECT_DIR$/rocketmq/rocketmq.iml" />
     </modules>
   </component>
 </project>

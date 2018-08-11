@@ -7,15 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
-        <module name="rabbitmq" />
-        <module name="rocketmq" />
         <module name="SpringBoot_RabbitMQ" />
-        <module name="SpringBoot_RabbitMQ_2.0" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="consumer" target="1.5" />
-      <module name="demo" target="1.5" />
+      <module name="demo" target="1.8" />
       <module name="rabbitmq" target="1.5" />
       <module name="rocketmq" target="1.5" />
       <module name="SpringBoot_RabbitMQ" target="1.8" />

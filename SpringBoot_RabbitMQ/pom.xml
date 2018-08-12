@@ -26,6 +26,7 @@
 
 	<dependencies>
 		<!-- spring-boot-starter-actuator模块是一个spring提供的监控模块 -->
+		<!-- 如果不加会导致mq无法连接 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>

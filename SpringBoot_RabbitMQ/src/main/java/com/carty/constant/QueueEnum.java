@@ -26,4 +26,6 @@ public enum QueueEnum {
     QueueEnum(String val) {
         this.val = val;
     }
+
+    public String val(){return this.val;}
 }

@@ -18,8 +18,8 @@ package com.carty.constant;
  * @since 1.0.0
  */
 public enum ExchangeEnum {
-    CARTY_EX("carty.test.ex"),
-    ORDER_EX("order.ex");
+    CARTY_EX("cartys.test.ex"),
+    ORDER_EX("orders.ex");
 
     private String val;
 

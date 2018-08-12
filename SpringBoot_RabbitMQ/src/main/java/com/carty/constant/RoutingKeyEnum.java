@@ -26,4 +26,6 @@ public enum RoutingKeyEnum {
     RoutingKeyEnum(String val) {
         this.val = val;
     }
+
+    public String val(){return this.val;}
 }

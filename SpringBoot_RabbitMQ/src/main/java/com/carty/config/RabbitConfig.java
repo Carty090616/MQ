@@ -11,9 +11,14 @@
 package com.carty.config;
 
 import com.carty.constant.ExchangeEnum;
-import org.springframework.amqp.core.Exchange;
-import org.springframework.amqp.core.ExchangeBuilder;
+import com.carty.constant.QueueEnum;
+import com.carty.constant.RoutingKeyEnum;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,12 +35,40 @@ public class RabbitConfig {
 
     // 声明exchange
     @Bean
-    public Exchange cartyExchange(){
+    public Exchange cartyExchange() {
         return ExchangeBuilder.directExchange(ExchangeEnum.CARTY_EX.val()).durable(true).build();
     }
 
     @Bean
-    public Exchange orderExchange(){
+    public Exchange orderExchange() {
         return ExchangeBuilder.directExchange(ExchangeEnum.ORDER_EX.name()).durable(true).build();
+    }
+
+    // 声明队列
+    @Bean
+    public Queue cartyQueue() {
+        return QueueBuilder.durable(QueueEnum.CARTY_QUEUE.val()).build();
+    }
+
+    @Bean
+    public Queue orderQueue() {
+        return QueueBuilder.durable(QueueEnum.ORDER_QUEUE.val()).build();
+    }
+
+    // 声明绑定
+    @Bean
+    public Binding cartyBinding() {
+        return BindingBuilder
+                .bind(cartyQueue()).to(cartyExchange())
+                // 定义RoutingKey
+                .with(RoutingKeyEnum.CARTY_ROUTINGKEY.val()).noargs();
+    }
+
+    @Bean
+    public Binding orderBinding() {
+        return BindingBuilder
+                .bind(orderQueue()).to(orderExchange())
+                // 定义RoutingKey
+                .with(RoutingKeyEnum.ORDER_ROUTINGKEY.val()).noargs();
     }
 }

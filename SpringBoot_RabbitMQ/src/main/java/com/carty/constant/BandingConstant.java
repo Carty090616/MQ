@@ -17,17 +17,10 @@ package com.carty.constant;
  * @create 2018/8/10
  * @since 1.0.0
  */
-public enum BandingEnum {
-    CARTY_BINDING("carty.test.binding"),
-    ORDER_BINDING("order.binding");
+public interface BandingConstant {
 
-    private String val;
+    public static final String CARTY_BINDING = "carty.test.binding";
 
-    BandingEnum(String val) {
-        this.val = val;
-    }
+    public static final String ORDER_BINDING = "order.binding";
 
-    public String val() {
-        return this.val;
-    }
 }

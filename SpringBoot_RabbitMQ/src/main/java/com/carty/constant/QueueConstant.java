@@ -1,9 +1,9 @@
 /**
  * Copyright (C), 2015-2018, 章鱼云商
- * FileName: ExchangeEnum
+ * FileName: QueueEnum
  * Author:   Lifeifei
- * Date:     2018/8/10 14:43
- * Description: 定义exchange
+ * Date:     2018/8/10 14:48
+ * Description: 定义queue
  * History:
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
@@ -11,21 +11,15 @@
 package com.carty.constant;
 
 /**
- * 〈定义exchange〉
+ * 〈定义queue〉
  *
  * @author Lifeifei
  * @create 2018/8/10
  * @since 1.0.0
  */
-public enum ExchangeEnum {
-    CARTY_EX("cartys.test.ex"),
-    ORDER_EX("orders.ex");
+public interface QueueConstant {
 
-    private String val;
+    public static final String CARTY_QUEUE = "carty.test.queue";
 
-    ExchangeEnum(String val) {
-        this.val = val;
-    }
-
-    public String val(){return this.val;}
+    public static final String ORDER_QUEUE = "order.queue";
 }

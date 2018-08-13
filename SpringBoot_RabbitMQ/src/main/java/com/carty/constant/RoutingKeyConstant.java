@@ -17,15 +17,9 @@ package com.carty.constant;
  * @create 2018/8/10
  * @since 1.0.0
  */
-public enum RoutingKeyEnum {
-    CARTY_ROUTINGKEY("carty.test.routingkey"),
-    ORDER_ROUTINGKEY("order.routingkey");
+public interface RoutingKeyConstant {
 
-    private String val;
+    public static final String CARTY_ROUTINGKEY = "carty.test.routingkey";
 
-    RoutingKeyEnum(String val) {
-        this.val = val;
-    }
-
-    public String val(){return this.val;}
+    public static final String ORDER_ROUTINGKEY = "order.routingkey";
 }

@@ -26,29 +26,28 @@ import org.springframework.context.annotation.Configuration;
  * @since 1.0.0
  */
 @Configuration
-@EnableRabbit
 public class RabbitConfig {
 
     // 声明exchange
     @Bean
     public Exchange cartyExchange() {
-        return ExchangeBuilder.directExchange(ExchangeEnum.CARTY_EX.val()).durable(true).build();
+        return ExchangeBuilder.directExchange(ExchangeEnum.CARTY_EX).durable(true).build();
     }
 
     @Bean
     public Exchange orderExchange() {
-        return ExchangeBuilder.directExchange(ExchangeEnum.ORDER_EX.val()).durable(true).build();
+        return ExchangeBuilder.directExchange(ExchangeEnum.ORDER_EX).durable(true).build();
     }
 
     // 声明队列
     @Bean
     public Queue cartyQueue() {
-        return QueueBuilder.durable(QueueEnum.CARTY_QUEUE.val()).build();
+        return QueueBuilder.durable(QueueEnum.CARTY_QUEUE).build();
     }
 
     @Bean
     public Queue orderQueue() {
-        return QueueBuilder.durable(QueueEnum.ORDER_QUEUE.val()).build();
+        return QueueBuilder.durable(QueueEnum.ORDER_QUEUE).build();
     }
 
     // 声明绑定
@@ -57,7 +56,7 @@ public class RabbitConfig {
         return BindingBuilder
                 .bind(cartyQueue()).to(cartyExchange())
                 // 定义RoutingKey
-                .with(RoutingKeyEnum.CARTY_ROUTINGKEY.val()).noargs();
+                .with(RoutingKeyEnum.CARTY_ROUTINGKEY).noargs();
     }
 
     @Bean
@@ -65,6 +64,6 @@ public class RabbitConfig {
         return BindingBuilder
                 .bind(orderQueue()).to(orderExchange())
                 // 定义RoutingKey
-                .with(RoutingKeyEnum.ORDER_ROUTINGKEY.val()).noargs();
+                .with(RoutingKeyEnum.ORDER_ROUTINGKEY).noargs();
     }
 }

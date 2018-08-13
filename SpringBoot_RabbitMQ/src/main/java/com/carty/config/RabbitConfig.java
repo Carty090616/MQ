@@ -10,9 +10,9 @@
  */
 package com.carty.config;
 
-import com.carty.constant.ExchangeEnum;
-import com.carty.constant.QueueEnum;
-import com.carty.constant.RoutingKeyEnum;
+import com.carty.constant.ExchangeConstant;
+import com.carty.constant.QueueConstant;
+import com.carty.constant.RoutingKeyConstant;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.context.annotation.Bean;
@@ -31,23 +31,23 @@ public class RabbitConfig {
     // 声明exchange
     @Bean
     public Exchange cartyExchange() {
-        return ExchangeBuilder.directExchange(ExchangeEnum.CARTY_EX).durable(true).build();
+        return ExchangeBuilder.directExchange(ExchangeConstant.CARTY_EX).durable(true).build();
     }
 
     @Bean
     public Exchange orderExchange() {
-        return ExchangeBuilder.directExchange(ExchangeEnum.ORDER_EX).durable(true).build();
+        return ExchangeBuilder.directExchange(ExchangeConstant.ORDER_EX).durable(true).build();
     }
 
     // 声明队列
     @Bean
     public Queue cartyQueue() {
-        return QueueBuilder.durable(QueueEnum.CARTY_QUEUE).build();
+        return QueueBuilder.durable(QueueConstant.CARTY_QUEUE).build();
     }
 
     @Bean
     public Queue orderQueue() {
-        return QueueBuilder.durable(QueueEnum.ORDER_QUEUE).build();
+        return QueueBuilder.durable(QueueConstant.ORDER_QUEUE).build();
     }
 
     // 声明绑定
@@ -56,7 +56,7 @@ public class RabbitConfig {
         return BindingBuilder
                 .bind(cartyQueue()).to(cartyExchange())
                 // 定义RoutingKey
-                .with(RoutingKeyEnum.CARTY_ROUTINGKEY).noargs();
+                .with(RoutingKeyConstant.CARTY_ROUTINGKEY).noargs();
     }
 
     @Bean
@@ -64,6 +64,6 @@ public class RabbitConfig {
         return BindingBuilder
                 .bind(orderQueue()).to(orderExchange())
                 // 定义RoutingKey
-                .with(RoutingKeyEnum.ORDER_ROUTINGKEY).noargs();
+                .with(RoutingKeyConstant.ORDER_ROUTINGKEY).noargs();
     }
 }
